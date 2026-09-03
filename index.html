@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>THRUST</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MAIN MENU
+    ====================================================== -->
+
+    <section id="menuScreen" class="screen active">
+
+        <div class="menu-bg"></div>
+
+        <div class="menu-content">
+
+            <div class="logo-wrap">
+
+                <div class="logo">
+                    THRUST
+                </div>
+
+                <div class="logo-line"></div>
+
+                <div class="subtitle">
+                    CONTROL THE FALL
+                </div>
+
+            </div>
+
+
+            <button id="playBtn" class="main-btn">
+                <span>▶</span>
+                PLAY
+            </button>
+
+
+            <div class="menu-grid">
+
+                <button id="leaderboardBtn" class="menu-btn">
+                    🌎 WORLD LEADERBOARD
+                </button>
+
+                <button id="settingsBtn" class="menu-btn">
+                    ⚙ SETTINGS
+                </button>
+
+            </div>
+
+
+            <div class="controls-info">
+
+                <span>SPACE</span>
+                /
+                <span>CLICK</span>
+                TO THRUST
+
+            </div>
+
+
+            <div class="version">
+                THRUST // 2.0
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GAME
+    ====================================================== -->
+
+    <section id="gameScreen" class="screen game-screen">
+
+        <canvas id="gameCanvas"></canvas>
+
+
+        <div class="hud">
+
+            <div class="hud-left">
+
+                <div class="hud-box">
+
+                    <span class="hud-label">
+                        DISTANCE
+                    </span>
+
+                    <strong id="distance">
+                        0m
+                    </strong>
+
+                </div>
+
+
+                <div class="hud-box">
+
+                    <span class="hud-label">
+                        SPEED
+                    </span>
+
+                    <strong id="speed">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="hud-center">
+
+                <div id="eventLabel" class="event-label">
+                    SECTOR 01
+                </div>
+
+                <div class="progress">
+
+                    <div id="progressBar"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hud-right">
+
+                <div class="hud-box">
+
+                    <span class="hud-label">
+                        SECTOR
+                    </span>
+
+                    <strong id="sector">
+                        01
+                    </strong>
+
+                </div>
+
+
+                <button id="pauseBtn" class="pause-btn">
+                    II
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAUSE -->
+
+        <div id="pauseOverlay" class="overlay hidden">
+
+            <div class="pause-card">
+
+                <div class="pause-title">
+                    PAUSED
+                </div>
+
+
+                <button id="resumeBtn" class="main-btn small">
+                    RESUME
+                </button>
+
+
+                <button id="pauseMenuBtn" class="menu-btn">
+                    MAIN MENU
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GAME OVER
+    ====================================================== -->
+
+    <section id="gameOverScreen" class="screen">
+
+        <div class="gameover-bg"></div>
+
+
+        <div class="gameover-card">
+
+            <div class="gameover-small">
+                FLIGHT TERMINATED
+            </div>
+
+
+            <h1>
+                RUN COMPLETE
+            </h1>
+
+
+            <div class="final-distance">
+
+                <span>
+                    DISTANCE
+                </span>
+
+                <strong id="finalDistance">
+                    0m
+                </strong>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat">
+
+                    <span>
+                        SECTOR
+                    </span>
+
+                    <strong id="finalSector">
+                        01
+                    </strong>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <span>
+                        MAX SPEED
+                    </span>
+
+                    <strong id="finalSpeed">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div id="worldRecord" class="world-record hidden">
+                🌎 NEW WORLD RECORD
+            </div>
+
+
+            <div id="leaderboardStatus" class="leaderboard-status">
+                SAVING FLIGHT...
+            </div>
+
+
+            <div class="gameover-buttons">
+
+                <button id="retryBtn" class="main-btn">
+                    ↻ RETRY
+                </button>
+
+
+                <button id="gameOverLeaderboardBtn" class="menu-btn">
+                    🌎 LEADERBOARD
+                </button>
+
+
+                <button id="gameOverMenuBtn" class="menu-btn">
+                    MAIN MENU
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WORLD LEADERBOARD
+    ====================================================== -->
+
+    <section id="leaderboardScreen" class="screen">
+
+        <div class="leaderboard-page">
+
+            <button class="back-btn" data-back>
+                ← BACK
+            </button>
+
+
+            <div class="leaderboard-header">
+
+                <div class="leaderboard-kicker">
+                    GLOBAL FLIGHT DATA
+                </div>
+
+                <h1>
+                    WORLD LEADERBOARD
+                </h1>
+
+                <p>
+                    THE HIGHEST DISTANCES EVER REACHED
+                </p>
+
+            </div>
+
+
+            <div id="leaderboardLive" class="live-indicator">
+                <span></span>
+                LIVE
+            </div>
+
+
+            <div id="leaderboardList" class="leaderboard-list">
+
+                <div class="leaderboard-loading">
+                    LOADING GLOBAL RECORDS...
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SETTINGS
+    ====================================================== -->
+
+    <section id="settingsScreen" class="screen">
+
+        <div class="page-card">
+
+            <button class="back-btn" data-back>
+                ← BACK
+            </button>
+
+
+            <h1>
+                SETTINGS
+            </h1>
+
+
+            <div class="setting-row">
+
+                <div>
+
+                    <strong>
+                        MUSIC
+                    </strong>
+
+                    <small>
+                        Background soundtrack
+                    </small>
+
+                </div>
+
+
+                <button id="musicToggle" class="toggle">
+                    ON
+                </button>
+
+            </div>
+
+
+            <div class="setting-row">
+
+                <div>
+
+                    <strong>
+                        SFX
+                    </strong>
+
+                    <small>
+                        Gameplay sound effects
+                    </small>
+
+                </div>
+
+
+                <button id="sfxToggle" class="toggle">
+                    ON
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="data.js"></script>
+    <script src="audio.js"></script>
+    <script src="particles.js"></script>
+    <script src="world.js"></script>
+    <script src="leaderboard.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

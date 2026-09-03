@@ -1,0 +1,1237 @@
+/* ============================================================
+   THRUST
+   GLOBAL STYLE
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #030711;
+
+    color: #eaf7ff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+.screen {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.screen.active {
+    display: flex;
+}
+
+
+
+/* ============================================================
+   MENU
+   ============================================================ */
+
+#menuScreen {
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 50% 40%,
+            rgba(25, 130, 210, 0.16),
+            transparent 35%),
+        radial-gradient(circle at 15% 80%,
+            rgba(0, 100, 180, 0.12),
+            transparent 30%),
+        #030711;
+}
+
+
+.menu-bg {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(115deg,
+            transparent 0%,
+            rgba(80, 200, 255, 0.025) 50%,
+            transparent 100%);
+
+    pointer-events: none;
+}
+
+
+.menu-content {
+    position: relative;
+
+    width: min(680px,
+            calc(100% - 40px));
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+.logo-wrap {
+    margin-bottom: 52px;
+}
+
+
+.logo {
+    font-size: clamp(72px,
+            12vw,
+            138px);
+
+    font-weight: 1000;
+
+    letter-spacing: 0.11em;
+
+    color: #f3fbff;
+
+    text-shadow:
+        0 0 8px rgba(90, 220, 255, 0.65),
+        0 0 30px rgba(40, 180, 255, 0.3),
+        0 0 80px rgba(40, 130, 255, 0.15);
+}
+
+
+.logo-line {
+    width: 180px;
+    height: 2px;
+
+    margin: 10px auto 13px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #62ddff,
+            transparent);
+
+    box-shadow:
+        0 0 14px rgba(70, 210, 255, 0.7);
+}
+
+
+.subtitle {
+    font-size: 11px;
+
+    letter-spacing: 6px;
+
+    opacity: 0.48;
+}
+
+
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.main-btn,
+.menu-btn,
+.pause-btn,
+.back-btn,
+.toggle {
+    border: 0;
+
+    color: #eafaff;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.main-btn {
+    min-width: 290px;
+
+    padding: 18px 38px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(135deg,
+            #178bd0,
+            #0756a4);
+
+    border: 1px solid rgba(130, 225, 255, 0.55);
+
+    box-shadow:
+        0 10px 45px rgba(0, 120, 220, 0.25),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+.main-btn span {
+    margin-right: 10px;
+}
+
+
+.main-btn:hover {
+    transform:
+        translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 15px 55px rgba(0, 150, 255, 0.38);
+}
+
+
+.main-btn.small {
+    min-width: 220px;
+
+    padding: 14px 25px;
+
+    font-size: 14px;
+}
+
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 16px;
+}
+
+
+.menu-btn {
+    padding: 15px 18px;
+
+    border-radius: 11px;
+
+    background:
+        rgba(9, 24, 40, 0.72);
+
+    border: 1px solid rgba(90, 190, 240, 0.14);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.menu-btn:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(90, 210, 255, 0.4);
+
+    background:
+        rgba(20, 55, 80, 0.8);
+}
+
+
+.controls-info {
+    margin-top: 35px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.34;
+}
+
+
+.controls-info span {
+    color: #72ddff;
+
+    font-weight: 900;
+}
+
+
+.version {
+    margin-top: 30px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.2;
+}
+
+
+
+/* ============================================================
+   GAME
+   ============================================================ */
+
+.game-screen {
+    background: #02050b;
+}
+
+
+#gameCanvas {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+
+/* ============================================================
+   HUD
+   ============================================================ */
+
+.hud {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+    right: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr minmax(180px, 360px) 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+
+    pointer-events: none;
+}
+
+
+.hud-left,
+.hud-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.hud-right {
+    justify-content: flex-end;
+}
+
+
+.hud-box {
+    min-width: 110px;
+
+    padding: 11px 15px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(5, 15, 28, 0.58);
+
+    border:
+        1px solid rgba(100, 205, 255, 0.12);
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+
+.hud-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.4;
+}
+
+
+.hud-box strong {
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+
+.hud-center {
+    text-align: center;
+}
+
+
+.event-label {
+    margin-bottom: 8px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    opacity: 0.65;
+}
+
+
+.progress {
+    width: 100%;
+
+    height: 3px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+#progressBar {
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            #32bfff,
+            #9cecff);
+
+    box-shadow:
+        0 0 12px rgba(50, 190, 255, 0.7);
+
+    transition:
+        width 0.08s linear;
+}
+
+
+.pause-btn {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(7, 20, 34, 0.7);
+
+    border:
+        1px solid rgba(100, 200, 255, 0.14);
+
+    pointer-events: auto;
+
+    font-size: 14px;
+
+    font-weight: 900;
+}
+
+
+.pause-btn:hover {
+    border-color:
+        rgba(90, 220, 255, 0.45);
+}
+
+
+
+/* ============================================================
+   OVERLAY
+   ============================================================ */
+
+.overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(0, 5, 12, 0.65);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 10;
+}
+
+
+.overlay.hidden,
+.hidden {
+    display: none !important;
+}
+
+
+.pause-card {
+    width: min(420px,
+            calc(100% - 40px));
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(7, 18, 32, 0.94);
+
+    border:
+        1px solid rgba(90, 210, 255, 0.2);
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.55);
+}
+
+
+.pause-title {
+    margin-bottom: 25px;
+
+    font-size: 34px;
+
+    font-weight: 1000;
+
+    letter-spacing: 5px;
+}
+
+
+.pause-card .menu-btn {
+    width: 220px;
+
+    margin-top: 10px;
+}
+
+
+
+/* ============================================================
+   GAME OVER
+   ============================================================ */
+
+#gameOverScreen {
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 50% 35%,
+            rgba(25, 100, 150, 0.14),
+            transparent 36%),
+        #02060d;
+}
+
+
+.gameover-bg {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(circle,
+            transparent 20%,
+            rgba(0, 0, 0, 0.6) 100%);
+}
+
+
+.gameover-card {
+    position: relative;
+
+    width: min(560px,
+            calc(100% - 40px));
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background:
+        rgba(6, 17, 30, 0.9);
+
+    border:
+        1px solid rgba(100, 205, 255, 0.15);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.5);
+}
+
+
+.gameover-small {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.4;
+}
+
+
+.gameover-card h1 {
+    margin-top: 8px;
+
+    font-size: 31px;
+
+    letter-spacing: 3px;
+}
+
+
+.final-distance {
+    margin: 35px 0 25px;
+}
+
+
+.final-distance span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.4;
+}
+
+
+.final-distance strong {
+    display: block;
+
+    font-size: 64px;
+
+    font-weight: 1000;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 0 30px rgba(60, 205, 255, 0.35);
+}
+
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+
+.stat {
+    padding: 15px;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(100, 200, 255, 0.08);
+}
+
+
+.stat span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.35;
+}
+
+
+.stat strong {
+    font-size: 20px;
+}
+
+
+.world-record {
+    padding: 13px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(35, 180, 255, 0.09);
+
+    border:
+        1px solid rgba(80, 210, 255, 0.3);
+
+    color: #8eeaff;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.leaderboard-status {
+    margin-bottom: 20px;
+
+    min-height: 15px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.4;
+}
+
+
+.gameover-buttons {
+    display: grid;
+
+    gap: 10px;
+}
+
+
+.gameover-buttons .main-btn,
+.gameover-buttons .menu-btn {
+    width: 100%;
+}
+
+
+
+/* ============================================================
+   LEADERBOARD
+   ============================================================ */
+
+#leaderboardScreen {
+    overflow-y: auto;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    padding: 55px 20px;
+
+    background:
+        radial-gradient(circle at 50% 10%,
+            rgba(30, 150, 220, 0.12),
+            transparent 35%),
+        #02060d;
+}
+
+
+.leaderboard-page {
+    width: min(900px,
+            100%);
+}
+
+
+.back-btn {
+    padding: 10px 14px;
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(100, 200, 255, 0.1);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+
+.back-btn:hover {
+    border-color:
+        rgba(100, 220, 255, 0.4);
+}
+
+
+.leaderboard-header {
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+
+.leaderboard-kicker {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: #59d9ff;
+
+    opacity: 0.7;
+}
+
+
+.leaderboard-header h1 {
+    margin-top: 8px;
+
+    font-size: clamp(34px,
+            6vw,
+            58px);
+
+    letter-spacing: 3px;
+
+    font-weight: 1000;
+}
+
+
+.leaderboard-header p {
+    margin-top: 9px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.35;
+}
+
+
+.live-indicator {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin: 22px auto;
+
+    width: fit-content;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.45;
+}
+
+
+.live-indicator span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #777;
+}
+
+
+.live-indicator.online {
+    opacity: 0.8;
+}
+
+
+.live-indicator.online span {
+    background: #45ffb0;
+
+    box-shadow:
+        0 0 10px rgba(69, 255, 176, 0.8);
+}
+
+
+.leaderboard-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    padding-bottom: 50px;
+}
+
+
+.leaderboard-row {
+    display: grid;
+
+    grid-template-columns:
+        75px 1fr auto;
+
+    align-items: center;
+
+    min-height: 78px;
+
+    padding: 0 24px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(100deg,
+            rgba(12, 35, 55, 0.72),
+            rgba(5, 13, 23, 0.82));
+
+    border:
+        1px solid rgba(90, 190, 240, 0.09);
+
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease;
+}
+
+
+.leaderboard-row:hover {
+    transform:
+        translateX(5px);
+
+    border-color:
+        rgba(80, 210, 255, 0.3);
+}
+
+
+.leaderboard-row.top-rank {
+    border-color:
+        rgba(80, 210, 255, 0.2);
+
+    background:
+        linear-gradient(100deg,
+            rgba(15, 50, 75, 0.8),
+            rgba(5, 15, 27, 0.9));
+}
+
+
+.leaderboard-rank {
+    font-size: 20px;
+
+    font-weight: 1000;
+
+    opacity: 0.75;
+}
+
+
+.leaderboard-player {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.leaderboard-player strong {
+    font-size: 17px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.leaderboard-player span {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.28;
+}
+
+
+.leaderboard-distance {
+    font-size: 22px;
+
+    font-weight: 1000;
+
+    letter-spacing: 1px;
+
+    color: #dff8ff;
+}
+
+
+.leaderboard-loading,
+.leaderboard-empty {
+    min-height: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 18px;
+
+    border:
+        1px dashed rgba(100, 205, 255, 0.15);
+
+    background:
+        rgba(5, 15, 25, 0.45);
+
+    text-align: center;
+}
+
+
+.leaderboard-empty strong {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+}
+
+
+.leaderboard-empty span {
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.35;
+}
+
+
+.empty-icon {
+    font-size: 42px;
+
+    margin-bottom: 7px;
+}
+
+
+.retry-leaderboard {
+    margin-top: 10px;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    border:
+        1px solid rgba(80, 200, 255, 0.2);
+
+    background:
+        rgba(30, 100, 150, 0.2);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* ============================================================
+   SETTINGS
+   ============================================================ */
+
+#settingsScreen {
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(circle at 50% 30%,
+            rgba(30, 150, 220, 0.1),
+            transparent 35%),
+        #02060d;
+}
+
+
+.page-card {
+    width: min(580px,
+            100%);
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(7, 18, 31, 0.88);
+
+    border:
+        1px solid rgba(100, 205, 255, 0.13);
+
+    backdrop-filter: blur(18px);
+}
+
+
+.page-card h1 {
+    margin: 35px 0 25px;
+
+    font-size: 38px;
+
+    letter-spacing: 3px;
+}
+
+
+.setting-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.setting-row>div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.setting-row strong {
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+.setting-row small {
+    font-size: 9px;
+
+    opacity: 0.35;
+}
+
+
+.toggle {
+    min-width: 70px;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(30, 130, 190, 0.2);
+
+    border:
+        1px solid rgba(80, 200, 255, 0.25);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .main-btn {
+        min-width: 100%;
+    }
+
+
+    .hud {
+        top: 10px;
+
+        left: 10px;
+        right: 10px;
+
+        grid-template-columns:
+            1fr auto;
+
+        gap: 8px;
+    }
+
+
+    .hud-center {
+        display: none;
+    }
+
+
+    .hud-box {
+        min-width: 92px;
+
+        padding: 9px 11px;
+    }
+
+
+    .hud-box strong {
+        font-size: 15px;
+    }
+
+
+    .leaderboard-row {
+        grid-template-columns:
+            48px 1fr auto;
+
+        padding: 0 14px;
+    }
+
+
+    .leaderboard-distance {
+        font-size: 17px;
+    }
+
+
+    .final-distance strong {
+        font-size: 50px;
+    }
+
+
+    .gameover-card {
+        padding: 30px 22px;
+    }
+
+}
