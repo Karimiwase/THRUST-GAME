@@ -9,46 +9,34 @@
     padding: 0;
 }
 
-
 html,
 body {
     width: 100%;
     height: 100%;
-
     overflow: hidden;
-
     background: #030711;
-
     color: #eaf7ff;
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
 }
 
-
 button {
     font: inherit;
 }
 
-
 .screen {
     position: fixed;
-
     inset: 0;
-
     display: none;
-
     width: 100%;
     height: 100%;
 }
 
-
 .screen.active {
     display: flex;
 }
-
 
 
 /* ============================================================
@@ -69,10 +57,8 @@ button {
         #030711;
 }
 
-
 .menu-bg {
     position: absolute;
-
     inset: 0;
 
     background:
@@ -84,28 +70,25 @@ button {
     pointer-events: none;
 }
 
-
 .menu-content {
     position: relative;
 
     width: min(680px,
-            calc(100% - 40px));
+        calc(100% - 40px));
 
     text-align: center;
 
     z-index: 2;
 }
 
-
 .logo-wrap {
     margin-bottom: 52px;
 }
 
-
 .logo {
     font-size: clamp(72px,
-            12vw,
-            138px);
+        12vw,
+        138px);
 
     font-weight: 1000;
 
@@ -118,7 +101,6 @@ button {
         0 0 30px rgba(40, 180, 255, 0.3),
         0 0 80px rgba(40, 130, 255, 0.15);
 }
-
 
 .logo-line {
     width: 180px;
@@ -136,7 +118,6 @@ button {
         0 0 14px rgba(70, 210, 255, 0.7);
 }
 
-
 .subtitle {
     font-size: 11px;
 
@@ -145,6 +126,29 @@ button {
     opacity: 0.48;
 }
 
+
+/* ============================================================
+   KARIMI CREATOR MARK
+   ============================================================ */
+
+.creator-mark {
+    margin-top: 10px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+    color: rgba(110, 220, 255, 0.72);
+
+    opacity: 0.75;
+
+    text-shadow:
+        0 0 12px rgba(70, 200, 255, 0.22);
+
+    transform: translateX(2px);
+}
 
 
 /* ============================================================
@@ -169,7 +173,6 @@ button {
         box-shadow 0.18s ease;
 }
 
-
 .main-btn {
     min-width: 290px;
 
@@ -186,7 +189,6 @@ button {
 
     box-shadow:
         0 10px 45px rgba(0, 120, 220, 0.25),
-
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
     font-size: 18px;
@@ -196,11 +198,9 @@ button {
     letter-spacing: 3px;
 }
 
-
 .main-btn span {
     margin-right: 10px;
 }
-
 
 .main-btn:hover {
     transform:
@@ -210,7 +210,6 @@ button {
         0 15px 55px rgba(0, 150, 255, 0.38);
 }
 
-
 .main-btn.small {
     min-width: 220px;
 
@@ -218,7 +217,6 @@ button {
 
     font-size: 14px;
 }
-
 
 .menu-grid {
     display: grid;
@@ -230,7 +228,6 @@ button {
 
     margin-top: 16px;
 }
-
 
 .menu-btn {
     padding: 15px 18px;
@@ -251,7 +248,6 @@ button {
     letter-spacing: 1.5px;
 }
 
-
 .menu-btn:hover {
     transform:
         translateY(-2px);
@@ -263,7 +259,6 @@ button {
         rgba(20, 55, 80, 0.8);
 }
 
-
 .controls-info {
     margin-top: 35px;
 
@@ -274,13 +269,11 @@ button {
     opacity: 0.34;
 }
 
-
 .controls-info span {
     color: #72ddff;
 
     font-weight: 900;
 }
-
 
 .version {
     margin-top: 30px;
@@ -293,7 +286,6 @@ button {
 }
 
 
-
 /* ============================================================
    GAME
    ============================================================ */
@@ -301,7 +293,6 @@ button {
 .game-screen {
     background: #02050b;
 }
-
 
 #gameCanvas {
     position: absolute;
@@ -313,7 +304,6 @@ button {
 
     display: block;
 }
-
 
 
 /* ============================================================
@@ -339,7 +329,6 @@ button {
     pointer-events: none;
 }
 
-
 .hud-left,
 .hud-right {
     display: flex;
@@ -349,11 +338,9 @@ button {
     gap: 10px;
 }
 
-
 .hud-right {
     justify-content: flex-end;
 }
-
 
 .hud-box {
     min-width: 110px;
@@ -374,7 +361,6 @@ button {
         inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
-
 .hud-label {
     display: block;
 
@@ -387,18 +373,15 @@ button {
     opacity: 0.4;
 }
 
-
 .hud-box strong {
     font-size: 18px;
 
     letter-spacing: 1px;
 }
 
-
 .hud-center {
     text-align: center;
 }
-
 
 .event-label {
     margin-bottom: 8px;
@@ -412,7 +395,6 @@ button {
     opacity: 0.65;
 }
 
-
 .progress {
     width: 100%;
 
@@ -425,7 +407,6 @@ button {
     background:
         rgba(255, 255, 255, 0.08);
 }
-
 
 #progressBar {
     width: 0%;
@@ -443,7 +424,6 @@ button {
     transition:
         width 0.08s linear;
 }
-
 
 .pause-btn {
     width: 44px;
@@ -464,12 +444,10 @@ button {
     font-weight: 900;
 }
 
-
 .pause-btn:hover {
     border-color:
         rgba(90, 220, 255, 0.45);
 }
-
 
 
 /* ============================================================
@@ -495,16 +473,14 @@ button {
     z-index: 10;
 }
 
-
 .overlay.hidden,
 .hidden {
     display: none !important;
 }
 
-
 .pause-card {
     width: min(420px,
-            calc(100% - 40px));
+        calc(100% - 40px));
 
     padding: 45px;
 
@@ -522,7 +498,6 @@ button {
         0 30px 100px rgba(0, 0, 0, 0.55);
 }
 
-
 .pause-title {
     margin-bottom: 25px;
 
@@ -533,13 +508,11 @@ button {
     letter-spacing: 5px;
 }
 
-
 .pause-card .menu-btn {
     width: 220px;
 
     margin-top: 10px;
 }
-
 
 
 /* ============================================================
@@ -558,7 +531,6 @@ button {
         #02060d;
 }
 
-
 .gameover-bg {
     position: absolute;
 
@@ -570,12 +542,11 @@ button {
             rgba(0, 0, 0, 0.6) 100%);
 }
 
-
 .gameover-card {
     position: relative;
 
     width: min(560px,
-            calc(100% - 40px));
+        calc(100% - 40px));
 
     padding: 45px;
 
@@ -595,7 +566,6 @@ button {
         0 35px 100px rgba(0, 0, 0, 0.5);
 }
 
-
 .gameover-small {
     font-size: 9px;
 
@@ -603,7 +573,6 @@ button {
 
     opacity: 0.4;
 }
-
 
 .gameover-card h1 {
     margin-top: 8px;
@@ -613,11 +582,9 @@ button {
     letter-spacing: 3px;
 }
 
-
 .final-distance {
     margin: 35px 0 25px;
 }
-
 
 .final-distance span {
     display: block;
@@ -630,7 +597,6 @@ button {
 
     opacity: 0.4;
 }
-
 
 .final-distance strong {
     display: block;
@@ -645,7 +611,6 @@ button {
         0 0 30px rgba(60, 205, 255, 0.35);
 }
 
-
 .stats-grid {
     display: grid;
 
@@ -656,7 +621,6 @@ button {
 
     margin-bottom: 22px;
 }
-
 
 .stat {
     padding: 15px;
@@ -670,7 +634,6 @@ button {
         1px solid rgba(100, 200, 255, 0.08);
 }
 
-
 .stat span {
     display: block;
 
@@ -683,11 +646,9 @@ button {
     opacity: 0.35;
 }
 
-
 .stat strong {
     font-size: 20px;
 }
-
 
 .world-record {
     padding: 13px;
@@ -711,7 +672,6 @@ button {
     letter-spacing: 2px;
 }
 
-
 .leaderboard-status {
     margin-bottom: 20px;
 
@@ -724,19 +684,16 @@ button {
     opacity: 0.4;
 }
 
-
 .gameover-buttons {
     display: grid;
 
     gap: 10px;
 }
 
-
 .gameover-buttons .main-btn,
 .gameover-buttons .menu-btn {
     width: 100%;
 }
-
 
 
 /* ============================================================
@@ -759,12 +716,10 @@ button {
         #02060d;
 }
 
-
 .leaderboard-page {
     width: min(900px,
-            100%);
+        100%);
 }
-
 
 .back-btn {
     padding: 10px 14px;
@@ -782,19 +737,16 @@ button {
     letter-spacing: 1.5px;
 }
 
-
 .back-btn:hover {
     border-color:
         rgba(100, 220, 255, 0.4);
 }
-
 
 .leaderboard-header {
     margin-top: 40px;
 
     text-align: center;
 }
-
 
 .leaderboard-kicker {
     font-size: 9px;
@@ -806,19 +758,17 @@ button {
     opacity: 0.7;
 }
 
-
 .leaderboard-header h1 {
     margin-top: 8px;
 
     font-size: clamp(34px,
-            6vw,
-            58px);
+        6vw,
+        58px);
 
     letter-spacing: 3px;
 
     font-weight: 1000;
 }
-
 
 .leaderboard-header p {
     margin-top: 9px;
@@ -829,7 +779,6 @@ button {
 
     opacity: 0.35;
 }
-
 
 .live-indicator {
     display: flex;
@@ -858,7 +807,6 @@ button {
     opacity: 0.45;
 }
 
-
 .live-indicator span {
     width: 6px;
     height: 6px;
@@ -868,11 +816,9 @@ button {
     background: #777;
 }
 
-
 .live-indicator.online {
     opacity: 0.8;
 }
-
 
 .live-indicator.online span {
     background: #45ffb0;
@@ -880,7 +826,6 @@ button {
     box-shadow:
         0 0 10px rgba(69, 255, 176, 0.8);
 }
-
 
 .leaderboard-list {
     display: flex;
@@ -891,7 +836,6 @@ button {
 
     padding-bottom: 50px;
 }
-
 
 .leaderboard-row {
     display: grid;
@@ -920,7 +864,6 @@ button {
         border-color 0.18s ease;
 }
 
-
 .leaderboard-row:hover {
     transform:
         translateX(5px);
@@ -928,7 +871,6 @@ button {
     border-color:
         rgba(80, 210, 255, 0.3);
 }
-
 
 .leaderboard-row.top-rank {
     border-color:
@@ -940,7 +882,6 @@ button {
             rgba(5, 15, 27, 0.9));
 }
 
-
 .leaderboard-rank {
     font-size: 20px;
 
@@ -948,7 +889,6 @@ button {
 
     opacity: 0.75;
 }
-
 
 .leaderboard-player {
     display: flex;
@@ -958,13 +898,11 @@ button {
     gap: 5px;
 }
 
-
 .leaderboard-player strong {
     font-size: 17px;
 
     letter-spacing: 0.5px;
 }
-
 
 .leaderboard-player span {
     font-size: 8px;
@@ -973,7 +911,6 @@ button {
 
     opacity: 0.28;
 }
-
 
 .leaderboard-distance {
     font-size: 22px;
@@ -984,7 +921,6 @@ button {
 
     color: #dff8ff;
 }
-
 
 .leaderboard-loading,
 .leaderboard-empty {
@@ -1011,13 +947,11 @@ button {
     text-align: center;
 }
 
-
 .leaderboard-empty strong {
     font-size: 14px;
 
     letter-spacing: 2px;
 }
-
 
 .leaderboard-empty span {
     font-size: 9px;
@@ -1027,13 +961,11 @@ button {
     opacity: 0.35;
 }
 
-
 .empty-icon {
     font-size: 42px;
 
     margin-bottom: 7px;
 }
-
 
 .retry-leaderboard {
     margin-top: 10px;
@@ -1058,7 +990,6 @@ button {
 }
 
 
-
 /* ============================================================
    SETTINGS
    ============================================================ */
@@ -1077,10 +1008,9 @@ button {
         #02060d;
 }
 
-
 .page-card {
     width: min(580px,
-            100%);
+        100%);
 
     padding: 40px;
 
@@ -1095,7 +1025,6 @@ button {
     backdrop-filter: blur(18px);
 }
 
-
 .page-card h1 {
     margin: 35px 0 25px;
 
@@ -1103,7 +1032,6 @@ button {
 
     letter-spacing: 3px;
 }
-
 
 .setting-row {
     display: flex;
@@ -1120,7 +1048,6 @@ button {
         1px solid rgba(255, 255, 255, 0.06);
 }
 
-
 .setting-row>div {
     display: flex;
 
@@ -1129,20 +1056,17 @@ button {
     gap: 5px;
 }
 
-
 .setting-row strong {
     font-size: 13px;
 
     letter-spacing: 2px;
 }
 
-
 .setting-row small {
     font-size: 9px;
 
     opacity: 0.35;
 }
-
 
 .toggle {
     min-width: 70px;
@@ -1165,7 +1089,6 @@ button {
 }
 
 
-
 /* ============================================================
    MOBILE
    ============================================================ */
@@ -1176,11 +1099,9 @@ button {
         grid-template-columns: 1fr;
     }
 
-
     .main-btn {
         min-width: 100%;
     }
-
 
     .hud {
         top: 10px;
@@ -1194,11 +1115,9 @@ button {
         gap: 8px;
     }
 
-
     .hud-center {
         display: none;
     }
-
 
     .hud-box {
         min-width: 92px;
@@ -1206,11 +1125,9 @@ button {
         padding: 9px 11px;
     }
 
-
     .hud-box strong {
         font-size: 15px;
     }
-
 
     .leaderboard-row {
         grid-template-columns:
@@ -1219,19 +1136,20 @@ button {
         padding: 0 14px;
     }
 
-
     .leaderboard-distance {
         font-size: 17px;
     }
-
 
     .final-distance strong {
         font-size: 50px;
     }
 
-
     .gameover-card {
         padding: 30px 22px;
     }
 
+    .creator-mark {
+        font-size: 8px;
+        letter-spacing: 4px;
+    }
 }
